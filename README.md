@@ -1,6 +1,8 @@
 <div align="center">
 
-![AI Face & Body Identity Matrix](docs/assets/hero_banner.svg)
+<p align="center">
+  <img src="./docs/assets/hero_banner.svg" alt="AI Face & Body Identity Matrix" width="100%" />
+</p>
 
 # AI-Powered Face & Body Identity Matrix
 ### Autonomous Enterprise Access Control &bull; Biometric Anti-Tailgating &bull; Multi-Zone Surveillance
@@ -51,14 +53,18 @@ Instead of trusting a piece of plastic, **your identity is verified biometricall
 ### 1. Door Entry Kiosk (`/camera`)
 The employee-facing checkpoint screen. Built with military HUD styling, reticle corners, optical scanlines, live biometric confidence telemetry, and real-time tailgating alerts.
 
-![Door Entry Kiosk Preview](docs/assets/kiosk_preview.svg)
+<p align="center">
+  <img src="./docs/assets/kiosk_preview.svg" alt="Door Entry Kiosk Preview" width="100%" />
+</p>
 
 ---
 
 ### 2. Enterprise Admin Surveillance Wall (`/admin`)
 The central command console for security teams and facility administrators. Features a live CCTV matrix, one-click camera connect wizard, employee management, camera health diagnostics, and cross-camera movement tracking.
 
-![Enterprise Admin Portal Preview](docs/assets/admin_preview.svg)
+<p align="center">
+  <img src="./docs/assets/admin_preview.svg" alt="Enterprise Admin Portal Preview" width="100%" />
+</p>
 
 ---
 
@@ -66,7 +72,9 @@ The central command console for security teams and facility administrators. Feat
 
 The system processes video feeds, neural network inference, encrypted vector storage, and access decisions in sub-500ms glass-to-glass latency:
 
-![Inference Pipeline Architecture](docs/assets/pipeline_architecture.svg)
+<p align="center">
+  <img src="./docs/assets/pipeline_architecture.svg" alt="Inference Pipeline Architecture" width="100%" />
+</p>
 
 ---
 
