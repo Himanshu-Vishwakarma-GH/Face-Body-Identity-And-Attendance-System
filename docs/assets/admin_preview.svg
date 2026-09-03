@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" width="100%" height="100%">
+  <defs>
+    <linearGradient id="admin-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a12" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <!-- Frame -->
+  <rect width="1000" height="620" rx="20" fill="#030509" stroke="rgba(255, 255, 255, 0.12)" stroke-width="2" />
+
+  <!-- Top Bar -->
+  <rect x="2" y="2" width="996" height="50" rx="18" fill="#0b1120" />
+  <circle cx="28" cy="26" r="6" fill="#ef4444" opacity="0.8" />
+  <circle cx="48" cy="26" r="6" fill="#eab308" opacity="0.8" />
+  <circle cx="68" cy="26" r="6" fill="#22c55e" opacity="0.8" />
+  <text x="500" y="32" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="13" font-weight="700" text-anchor="middle" letter-spacing="1">ENTERPRISE ADMIN PORTAL (PORT 8000/admin)</text>
+
+  <!-- Left Sidebar -->
+  <g transform="translate(15, 65)">
+    <rect width="200" height="535" rx="14" fill="#0b1120" stroke="rgba(255, 255, 255, 0.06)" />
+    
+    <text x="20" y="35" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="14">AI ACCESS GUARD</text>
+    <text x="20" y="52" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">SECURITY CONTROL</text>
+
+    <!-- Sidebar Items -->
+    <g transform="translate(12, 75)">
+      <rect width="176" height="36" rx="8" fill="#1e293b" />
+      <text x="14" y="23" fill="#38bdf8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12">Live Camera Wall</text>
+    </g>
+
+    <g transform="translate(12, 120)">
+      <text x="14" y="23" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="12">Dashboard</text>
+    </g>
+
+    <g transform="translate(12, 160)">
+      <text x="14" y="23" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="12">Employee Directory</text>
+    </g>
+
+    <g transform="translate(12, 200)">
+      <text x="14" y="23" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="12">Enroll New Member</text>
+    </g>
+
+    <g transform="translate(12, 240)">
+      <text x="14" y="23" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="12">Cameras &amp; Zones</text>
+    </g>
+
+    <g transform="translate(12, 280)">
+      <text x="14" y="23" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="12">Camera Health</text>
+    </g>
+
+    <g transform="translate(12, 320)">
+      <text x="14" y="23" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="12">Cross-Cam Journey</text>
+    </g>
+
+    <g transform="translate(12, 360)">
+      <text x="14" y="23" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-weight="600" font-size="12">Access Audit Logs</text>
+    </g>
+  </g>
+
+  <!-- Main Multi-Camera Matrix View -->
+  <g transform="translate(230, 65)">
+    <!-- Header -->
+    <text x="0" y="24" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20">Surveillance Matrix</text>
+    <text x="0" y="44" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11">ACTIVE CHECKPOINT VIDEO WALL &bull; 6 CAMERAS CONNECTED</text>
+
+    <!-- Connect Camera Button -->
+    <g transform="translate(600, 5)">
+      <rect width="145" height="34" rx="8" fill="#2563eb" />
+      <text x="72" y="22" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" text-anchor="middle">+ Connect Camera</text>
+    </g>
+
+    <!-- 4-Camera Grid Layout -->
+    <!-- Camera 1 -->
+    <g transform="translate(0, 60)">
+      <rect width="365" height="210" rx="12" fill="#050811" stroke="rgba(255, 255, 255, 0.08)" />
+      <!-- Inner Live Feed Box -->
+      <rect x="10" y="10" width="345" height="150" rx="8" fill="#0a0f1d" stroke="rgba(6, 182, 212, 0.3)" />
+      
+      <!-- Live Badge -->
+      <rect x="20" y="20" width="60" height="20" rx="10" fill="rgba(239, 68, 68, 0.2)" stroke="rgba(239, 68, 68, 0.5)" />
+      <circle cx="28" cy="30" r="3" fill="#ef4444" />
+      <text x="36" y="34" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">LIVE</text>
+      
+      <!-- Reticle corner -->
+      <path d="M 30 50 L 30 40 L 40 40" fill="none" stroke="#06b6d4" stroke-width="2" />
+      <path d="M 325 40 L 335 40 L 335 50" fill="none" stroke="#06b6d4" stroke-width="2" />
+      
+      <text x="20" y="185" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">Main Entrance Kiosk</text>
+      <text x="20" y="200" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">CAM-01 &bull; Entry Zone A</text>
+
+      <rect x="270" y="172" width="75" height="26" rx="6" fill="#1e293b" />
+      <text x="307" y="189" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">Identify</text>
+    </g>
+
+    <!-- Camera 2 -->
+    <g transform="translate(380, 60)">
+      <rect width="365" height="210" rx="12" fill="#050811" stroke="rgba(255, 255, 255, 0.08)" />
+      <rect x="10" y="10" width="345" height="150" rx="8" fill="#0a0f1d" stroke="rgba(6, 182, 212, 0.3)" />
+      
+      <rect x="20" y="20" width="60" height="20" rx="10" fill="rgba(239, 68, 68, 0.2)" stroke="rgba(239, 68, 68, 0.5)" />
+      <circle cx="28" cy="30" r="3" fill="#ef4444" />
+      <text x="36" y="34" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">LIVE</text>
+
+      <path d="M 30 50 L 30 40 L 40 40" fill="none" stroke="#06b6d4" stroke-width="2" />
+      <path d="M 325 40 L 335 40 L 335 50" fill="none" stroke="#06b6d4" stroke-width="2" />
+
+      <text x="20" y="185" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">Rear Security Gate</text>
+      <text x="20" y="200" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">CAM-02 &bull; Entry Zone B</text>
+
+      <rect x="270" y="172" width="75" height="26" rx="6" fill="#1e293b" />
+      <text x="307" y="189" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">Identify</text>
+    </g>
+
+    <!-- Camera 3 -->
+    <g transform="translate(0, 285)">
+      <rect width="365" height="210" rx="12" fill="#050811" stroke="rgba(255, 255, 255, 0.08)" />
+      <rect x="10" y="10" width="345" height="150" rx="8" fill="#0a0f1d" stroke="rgba(6, 182, 212, 0.3)" />
+      
+      <rect x="20" y="20" width="60" height="20" rx="10" fill="rgba(239, 68, 68, 0.2)" stroke="rgba(239, 68, 68, 0.5)" />
+      <circle cx="28" cy="30" r="3" fill="#ef4444" />
+      <text x="36" y="34" fill="#ef4444" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">LIVE</text>
+
+      <text x="20" y="185" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">High-Security Server Room</text>
+      <text x="20" y="200" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">CAM-04 &bull; Restricted Zone S</text>
+
+      <rect x="270" y="172" width="75" height="26" rx="6" fill="#1e293b" />
+      <text x="307" y="189" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">Identify</text>
+    </g>
+
+    <!-- Camera 4 (Phone Camera Stream) -->
+    <g transform="translate(380, 285)">
+      <rect width="365" height="210" rx="12" fill="#050811" stroke="rgba(255, 255, 255, 0.08)" />
+      <rect x="10" y="10" width="345" height="150" rx="8" fill="#0a0f1d" stroke="rgba(16, 185, 129, 0.3)" />
+      
+      <rect x="20" y="20" width="100" height="20" rx="10" fill="rgba(16, 185, 129, 0.2)" stroke="rgba(16, 185, 129, 0.5)" />
+      <circle cx="28" cy="30" r="3" fill="#10b981" />
+      <text x="36" y="34" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="9" font-weight="700">PHONE WI-FI</text>
+
+      <text x="20" y="185" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">Mobile Security Patrol</text>
+      <text x="20" y="200" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="10">CAM-PHONE-01 &bull; Transit Zone</text>
+
+      <rect x="270" y="172" width="75" height="26" rx="6" fill="#1e293b" />
+      <text x="307" y="189" fill="#38bdf8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700" text-anchor="middle">Identify</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment Variables
+.env
+!.env.example
+
+# Media & Cache
+*.pt
+ml/models/*
+!ml/models/.gitkeep
+data/faces/*
+!data/faces/.gitkeep
+data/redis/*
+
+# Node / Frontend
+node_modules/
+dist/
+!admin_portal/dist/
+!admin_portal/dist/**
+build/
+.vite/
+*.log
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

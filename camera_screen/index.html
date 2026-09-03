@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Security Checkpoint &bull; Biometric Access Kiosk</title>
+  <link rel="stylesheet" href="/camera-ui/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="kiosk-shell">
+    <!-- Top App Bar -->
+    <header class="kiosk-bar">
+      <div class="brand-cluster">
+        <div class="brand-symbol">
+          <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">ACCESS CONTROL SYSTEM</div>
+          <div class="brand-subtitle">Checkpoint Alpha &bull; <span id="camera-label">CAM-01 [Front Door]</span></div>
+        </div>
+      </div>
+
+      <div class="telemetry-cluster">
+        <div class="telemetry-item">
+          <span class="pulse-indicator"></span>
+          <span class="telemetry-label">SECURITY LEVEL</span>
+          <span class="telemetry-value">HIGH [RBAC]</span>
+        </div>
+        <div class="clock-display" id="clock">00:00:00</div>
+      </div>
+    </header>
+
+    <!-- Tailgate Security Override Banner -->
+    <div id="tailgate-banner" class="security-banner hidden">
+      <div class="banner-badge">INCIDENT</div>
+      <div class="banner-body">
+        <div class="banner-title">TAILGATING DETECTED &bull; ACCESS SUSPENDED</div>
+        <div class="banner-desc" id="tailgate-msg">Multiple unauthorized individuals identified within swipe timeframe. Security dispatched.</div>
+      </div>
+    </div>
+
+    <!-- Main Viewport -->
+    <main class="kiosk-grid">
+      <!-- Left: Optical Sensor Stream -->
+      <section class="viewport-panel">
+        <div class="hud-container">
+          <video id="webcam" autoplay playsinline muted></video>
+          <canvas id="snapshot-canvas" class="hidden"></canvas>
+
+          <!-- Optical Reticle Overlay -->
+          <div class="optical-reticle">
+            <div class="reticle-bracket br-tl"></div>
+            <div class="reticle-bracket br-tr"></div>
+            <div class="reticle-bracket br-bl"></div>
+            <div class="reticle-bracket br-br"></div>
+            <div class="horizontal-scanline"></div>
+            <div class="center-crosshair"></div>
+          </div>
+
+          <!-- HUD Telemetry Tags -->
+          <div class="hud-header">
+            <span class="hud-tag live-tag">LIVE OPTICAL SENSOR</span>
+            <span class="hud-tag" id="detection-pill">STANDBY</span>
+          </div>
+
+          <div class="hud-footer">
+            <span class="hud-mono">ONVIF STREAM: ACTIVE</span>
+            <span class="hud-mono">RES: 1080p &bull; 30 FPS</span>
+          </div>
+        </div>
+
+        <div class="source-toolbar">
+          <label for="camera-select" class="field-label">VIDEO CAPTURE DEVICE</label>
+          <select id="camera-select" class="source-select"></select>
+        </div>
+      </section>
+
+      <!-- Right: Authentication & Decision Console -->
+      <section class="console-panel">
+        <div class="console-header">
+          <div class="eyebrow">IDENTITY VERIFICATION</div>
+          <h2 class="console-title">Present Credentials</h2>
+          <p class="console-desc">Swipe magnetic badge or step forward for biometric identification.</p>
+        </div>
+
+        <!-- Credential Input -->
+        <form id="verify-form" class="credential-form" onsubmit="event.preventDefault(); verifyAccess();">
+          <div class="input-block">
+            <label for="employee-id" class="field-label">BADGE SERIAL / EMPLOYEE ID</label>
+            <div class="input-container">
+              <input
+                type="text"
+                id="employee-id"
+                placeholder="EMP001"
+                autocomplete="off"
+                autofocus
+                class="badge-input"
+              />
+              <span class="input-affix font-mono">RFID / NFC</span>
+            </div>
+          </div>
+
+          <div class="action-grid">
+            <button type="button" id="btn-verify" class="btn btn-action" onclick="verifyAccess()">
+              <span>VERIFY BADGE</span>
+              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </button>
+            <button type="button" id="btn-forgot" class="btn btn-ghost" onclick="verifyWithoutCard()">
+              <span>FORGOT BADGE? IDENTIFY BIOMETRICS</span>
+            </button>
+          </div>
+        </form>
+
+        <!-- Decision Box -->
+        <div id="result-box" class="decision-display default">
+          <div class="decision-header">
+            <div class="decision-state" id="result-status">AWAITING CREDENTIAL</div>
+            <div class="decision-sub" id="result-msg">Ready for badge swipe or biometric detection.</div>
+          </div>
+
+          <!-- Subject Identity Metadata -->
+          <div id="person-details" class="metadata-tray hidden">
+            <div class="meta-cell">
+              <div class="meta-label">SUBJECT</div>
+              <div class="meta-val" id="det-name">-</div>
+            </div>
+            <div class="meta-cell">
+              <div class="meta-label">BADGE ID</div>
+              <div class="meta-val font-mono" id="det-id">-</div>
+            </div>
+            <div class="meta-cell">
+              <div class="meta-label">DEPARTMENT</div>
+              <div class="meta-val" id="det-dept">-</div>
+            </div>
+          </div>
+
+          <!-- Metric Comparison Meters -->
+          <div class="metrics-block">
+            <div class="metric-row">
+              <div class="metric-info">
+                <span class="metric-name">1:1 FACE SIMILARITY [INSIGHTFACE 512-D]</span>
+                <span class="metric-score font-mono" id="face-score">--%</span>
+              </div>
+              <div class="progress-track">
+                <div id="face-bar" class="progress-fill" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <div class="metric-row">
+              <div class="metric-info">
+                <span class="metric-name">1:1 BODY PROPORTIONS [YOLOV8 POSE]</span>
+                <span class="metric-score font-mono" id="body-score">--%</span>
+              </div>
+              <div class="progress-track">
+                <div id="body-bar" class="progress-fill" style="width: 0%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Diagnostics -->
+    <footer class="kiosk-footer">
+      <div class="footer-segment">
+        <span class="brand-tag">AES-256 GCM ENCRYPTION AT REST</span>
+        <span>&bull;</span>
+        <span>ELASTIC REDIS STACK</span>
+      </div>
+      <div class="footer-segment font-mono">
+        DATABASE NODE: <span id="api-status">INITIALIZING...</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/camera-ui/script.js"></script>
+</body>
+</html>

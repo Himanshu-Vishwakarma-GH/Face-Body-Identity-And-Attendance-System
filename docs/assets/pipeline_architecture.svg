@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="pipe-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080c16" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1100" height="480" rx="16" fill="url(#pipe-bg)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1.5" />
+
+  <text x="550" y="45" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20" text-anchor="middle">
+    Full-Stack Biometric Inference &amp; Decision Pipeline
+  </text>
+  <text x="550" y="68" fill="#64748b" font-family="'JetBrains Mono', monospace" font-size="11" text-anchor="middle">
+    SUB-500MS END-TO-END VERIFICATION LATENCY &bull; DUAL-VECTOR ENCRYPTION
+  </text>
+
+  <!-- Stage 1: Ingestion -->
+  <g transform="translate(40, 110)">
+    <rect width="210" height="320" rx="12" fill="#0c1322" stroke="rgba(6, 182, 212, 0.4)" stroke-width="1.5" />
+    <rect x="15" y="15" width="180" height="28" rx="6" fill="rgba(6, 182, 212, 0.15)" />
+    <text x="105" y="34" fill="#06b6d4" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">1. SENSOR INGESTION</text>
+
+    <text x="20" y="75" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">Multi-Modal Inputs</text>
+    <text x="20" y="98" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; RFID Badge Scan (ID)</text>
+    <text x="20" y="122" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; DirectShow USB Cam</text>
+    <text x="20" y="146" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; Wi-Fi Phone Camera</text>
+    <text x="20" y="170" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; ONVIF / RTSP Network</text>
+
+    <rect x="20" y="210" width="170" height="85" rx="8" fill="#1e293b" />
+    <text x="30" y="235" fill="#60a5fa" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">FAST BUFFER PIPELINE</text>
+    <text x="30" y="255" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Non-blocking acquisition</text>
+    <text x="30" y="275" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">~25 FPS MJPEG frame pump</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <path d="M 260 270 L 290 270" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrow)" />
+
+  <!-- Stage 2: AI Feature Extraction -->
+  <g transform="translate(300, 110)">
+    <rect width="230" height="320" rx="12" fill="#0c1322" stroke="rgba(16, 185, 129, 0.4)" stroke-width="1.5" />
+    <rect x="15" y="15" width="200" height="28" rx="6" fill="rgba(16, 185, 129, 0.15)" />
+    <text x="115" y="34" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">2. AI FEATURE EXTRACTION</text>
+
+    <text x="20" y="75" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">InsightFace ArcFace</text>
+    <text x="20" y="95" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; Buffalo_s ONNX Runtime</text>
+    <text x="20" y="115" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; 512-dim Normalized Vector</text>
+
+    <text x="20" y="155" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">YOLOv8 Pose Keypoints</text>
+    <text x="20" y="175" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; 17 Skeletal Anatomies</text>
+    <text x="20" y="195" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; Scale-Invariant Ratios</text>
+
+    <text x="20" y="235" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">YOLOv8 Person Radar</text>
+    <text x="20" y="255" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; Real-time Corridor Count</text>
+    <text x="20" y="275" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; Bounding Box Clustering</text>
+  </g>
+
+  <!-- Arrow 2 -> 3 -->
+  <path d="M 540 270 L 570 270" stroke="#10b981" stroke-width="2.5" />
+
+  <!-- Stage 3: Vector Vault & Comparison -->
+  <g transform="translate(580, 110)">
+    <rect width="220" height="320" rx="12" fill="#0c1322" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1.5" />
+    <rect x="15" y="15" width="190" height="28" rx="6" fill="rgba(168, 85, 247, 0.15)" />
+    <text x="110" y="34" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">3. REDIS VECTOR VAULT</text>
+
+    <text x="20" y="75" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">Encrypted at Rest</text>
+    <text x="20" y="98" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; AES-256-GCM Payload</text>
+    <text x="20" y="122" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; Cloud Redis Cluster</text>
+    <text x="20" y="146" fill="#94a3b8" font-family="'JetBrains Mono', monospace" font-size="11">&bull; Batch MGET Pipelines</text>
+
+    <rect x="20" y="185" width="180" height="110" rx="8" fill="#1e293b" />
+    <text x="30" y="210" fill="#a855f7" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">1:1 MATCH ENGINE</text>
+    <text x="30" y="232" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Cosine &ge; 0.50 Threshold</text>
+    <text x="30" y="252" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-size="11">Body Ratio &ge; 0.65 Tolerance</text>
+    <text x="30" y="274" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="10">1:N Biometric Fallback</text>
+  </g>
+
+  <!-- Arrow 3 -> 4 -->
+  <path d="M 810 270 L 840 270" stroke="#c084fc" stroke-width="2.5" />
+
+  <!-- Stage 4: Decision & Enforcement -->
+  <g transform="translate(850, 110)">
+    <rect width="210" height="320" rx="12" fill="#0c1322" stroke="rgba(244, 63, 94, 0.4)" stroke-width="1.5" />
+    <rect x="15" y="15" width="180" height="28" rx="6" fill="rgba(244, 63, 94, 0.15)" />
+    <text x="105" y="34" fill="#f43f5e" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700" text-anchor="middle">4. ENFORCEMENT</text>
+
+    <text x="20" y="75" fill="#ffffff" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="13">Access Resolution</text>
+    <text x="20" y="100" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">[ GRANTED ]</text>
+    <text x="20" y="118" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">Biometrics Match 1:1</text>
+    
+    <text x="20" y="145" fill="#f43f5e" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">[ DENIED ]</text>
+    <text x="20" y="163" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">Mismatch or Tailgating</text>
+
+    <rect x="20" y="195" width="170" height="100" rx="8" fill="#1e293b" />
+    <text x="30" y="220" fill="#fbbf24" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">AUDIT &amp; TICKETS</text>
+    <text x="30" y="240" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">&bull; Real-time Attendance</text>
+    <text x="30" y="258" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">&bull; Cross-Cam Journey</text>
+    <text x="30" y="276" fill="#94a3b8" font-family="'Plus Jakarta Sans', sans-serif" font-size="10">&bull; Hardware Auto-Ticket</text>
+  </g>
+</svg>
