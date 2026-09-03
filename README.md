@@ -1,7 +1,7 @@
 <div align="center">
 
 <p align="center">
-  <img src="./docs/assets/hero_banner.svg" alt="AI Face & Body Identity Matrix" width="100%" />
+  <img src="./docs/assets/hero_banner.png" alt="AI Face & Body Identity Matrix" width="100%" />
 </p>
 
 # AI-Powered Face & Body Identity Matrix
@@ -54,7 +54,7 @@ Instead of trusting a piece of plastic, **your identity is verified biometricall
 The employee-facing checkpoint screen. Built with military HUD styling, reticle corners, optical scanlines, live biometric confidence telemetry, and real-time tailgating alerts.
 
 <p align="center">
-  <img src="./docs/assets/kiosk_preview.svg" alt="Door Entry Kiosk Preview" width="100%" />
+  <img src="./docs/assets/kiosk_preview.png" alt="Door Entry Kiosk Preview" width="100%" />
 </p>
 
 ---
@@ -63,7 +63,7 @@ The employee-facing checkpoint screen. Built with military HUD styling, reticle 
 The central command console for security teams and facility administrators. Features a live CCTV matrix, one-click camera connect wizard, employee management, camera health diagnostics, and cross-camera movement tracking.
 
 <p align="center">
-  <img src="./docs/assets/admin_preview.svg" alt="Enterprise Admin Portal Preview" width="100%" />
+  <img src="./docs/assets/admin_preview.png" alt="Enterprise Admin Portal Preview" width="100%" />
 </p>
 
 ---
@@ -73,7 +73,7 @@ The central command console for security teams and facility administrators. Feat
 The system processes video feeds, neural network inference, encrypted vector storage, and access decisions in sub-500ms glass-to-glass latency:
 
 <p align="center">
-  <img src="./docs/assets/pipeline_architecture.svg" alt="Inference Pipeline Architecture" width="100%" />
+  <img src="./docs/assets/pipeline_architecture.png" alt="Inference Pipeline Architecture" width="100%" />
 </p>
 
 ---
